@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <section class="login__section p-5">
+      <div class="container login-container">
+        <img class="logo__light" src="./img/logo-light.png" alt="Sites logo" />
+
+        <form class="login__form">
+          <div class="input">
+            <input
+              type="text"
+              class="form-control inputs text-white input__username"
+              placeholder="Username"
+              name="username"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="password__box">
+            <input
+              class="form-control input__password inputs text-white"
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn submit__btn">login</button>
+          <button class="forgot" type="button">Forgot password?</button>
+          <div class="wrong__box"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="./js/login.js"></script>
+  </body>
+</html>

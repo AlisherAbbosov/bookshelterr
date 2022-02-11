@@ -1,0 +1,165 @@
+body {
+  font-family: "Rubik", sans-serif;
+  background: #f8fafd;
+}
+
+.sytes__navbar {
+  padding: 11px 40px 11px 25px;
+  background: white;
+  margin-bottom: 1px;
+}
+
+.navbar__logo {
+  margin-right: 56px;
+}
+
+.search__input {
+  background: #f8fafd;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 17px 48px;
+  width: 670px;
+  color: rgba(0, 0, 0, 0.24);
+  border: 1px solid #ced4da;
+}
+
+.search__input:focus {
+  background: #f8fafd;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ced4da;
+}
+
+.logout {
+  font-size: 16px;
+  line-height: 19px;
+  padding: 10px 23px;
+}
+
+.result__number-box {
+  background: white;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #222531;
+  padding: 11px 40px 11px 306px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+  margin: 0 3px 2px;
+}
+
+.newest__btn {
+  background: #a6b0c3;
+  border-radius: 4px;
+  padding: 5px 13px;
+  color: white;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+.newest__icon {
+  margin-right: 5px;
+}
+
+/* Bookmarks */
+
+.bookmarks__box {
+  background: white;
+  width: 268px;
+  padding: 25px;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark__text-primary {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+.bookmark__text-secondary {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.bookmark__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bookmark__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  background: #f8fafd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.bookmark__title {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+.bookmark__authors {
+  font-size: 13px;
+  line-height: 18px;
+  color: #757881;
+}
+
+.bookmark__btn {
+  background: none;
+  border: none;
+}
+
+/* RESULT */
+
+.books__container {
+  display: flex;
+}
+
+.books__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+}
+
+.books__item {
+  width: 282px;
+  padding: 13px 15px;
+  background: white;
+}
+
+.card__img-box {
+  padding: 18px 24px;
+  background-color: #f8fafd;
+  margin-bottom: 19px;
+}
+
+.book__img {
+  height: 202px;
+  width: 202px;
+  border-radius: 5px;
+}
+
+.card__body {
+  padding: 0 4px;
+}
+
+/* CARD FONTS */
+
+.card__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #000000;
+}

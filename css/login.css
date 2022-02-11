@@ -1,0 +1,85 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.login__section {
+  background-image: url("../img/login-bg.jpg");
+  height: 100vh;
+  /* position: relative; */
+}
+
+.logo__light {
+  margin-bottom: 50px;
+}
+
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+.inputs {
+  background: none;
+  font-size: 14px;
+  padding: 13px 51px;
+  color: white;
+}
+.inputs:focus {
+  background: none;
+  outline: none;
+}
+.inputs::placeholder {
+  color: white;
+  text-transform: uppercase;
+}
+
+.input__username::before {
+  content: "";
+  background-image: url("../img/user.png");
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.password__box {
+  margin-bottom: 34px;
+}
+
+.submit__btn {
+  width: 100%;
+  color: #0d75ff;
+  background-color: white;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 13px 0;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 11px;
+}
+
+.forgot {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  justify-content: end;
+}
+
+.wrong__user {
+  padding: 0;
+  margin-top: 20px;
+  color: #ed4956;
+}

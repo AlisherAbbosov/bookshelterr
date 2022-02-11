@@ -46,7 +46,8 @@ body {
   color: #222531;
   padding: 11px 40px 11px 306px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
-  margin: 0 3px 2px;
+  margin: 0 2px 2px;
+  align-items: center;
 }
 
 .newest__btn {
@@ -78,12 +79,14 @@ body {
   font-size: 24px;
   line-height: 28px;
   color: #000000;
+  margin-bottom: 5px;
 }
 .bookmark__text-secondary {
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: #000000;
+  margin-bottom: 25px;
 }
 
 .bookmark__list {
@@ -124,12 +127,17 @@ body {
   display: flex;
 }
 
+.results__box {
+  padding: 40px;
+}
+
 .books__list {
   list-style: none;
   display: grid;
+  padding: 0;
+  margin: 0;
   grid-template-columns: repeat(3, 1fr);
-
-  gap: 40px;
+  gap: 33px;
 }
 
 .books__item {
@@ -154,12 +162,97 @@ body {
   padding: 0 4px;
 }
 
+/* CARD-BUTTONS */
+.buttons {
+  flex-direction: column;
+  text-align: end;
+}
+.bookmark__add-btn {
+  border: none;
+  background: #ffd80d;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 10px 26px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.more__btn {
+  background: rgba(13, 117, 255, 0.05);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 10px 28px;
+  border: none;
+  color: #0d75ff;
+  margin-bottom: 5px;
+}
+
+.read__btn {
+  padding: 10px 105px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  background: #75828a;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
 /* CARD FONTS */
 
 .card__title {
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-
   color: #000000;
+  margin-bottom: 2px;
+}
+.book-author {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  margin-bottom: 0;
+  color: #757881;
+  font-family: "Noto Sans", sans-serif;
+}
+.book-year {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #757881;
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* MODAL */
+
+.info__modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 45%;
+  background: white;
+  z-index: 10;
+  transition: all 0.5s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 115%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+  transition: all 0.5s;
+}
+
+.hidden {
+  display: none;
 }

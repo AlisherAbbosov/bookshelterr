@@ -36,10 +36,14 @@
               <a class="navbar-brand navbar__logo" href="#"
                 ><img src="./img/logo-black.png" alt="Sytes Logo"
               /></a>
-              <div class="collapse navbar-collapse">
+              <div class="collapse navbar-collapse search__input-box">
+                <label class="search__icon" for="search">
+                  <img src="./img/search-icon.png" alt="" />
+                </label>
                 <input
                   class="form-control search__input"
                   type="text"
+                  id="search"
                   placeholder="Search"
                   aria-label="Search"
                 />
@@ -112,7 +116,13 @@
             <div class="buttons">
               <button class="bookmark__add-btn">Bookmark</button>
               <button class="more__btn">More info</button>
-              <button class="read__btn">Read</button>
+
+              <button
+                href="https://www.googleapis.com/books/v1/volumes/clTZCwAAQBAJs"
+                class="read__btn"
+              >
+                Read
+              </button>
             </div>
           </div>
         </div>
@@ -127,18 +137,8 @@
           <p class="bookmark__authors">David M. Beazley</p>
         </div>
         <div class="d-flex">
-          <button
-            class="read__book-btn bookmark__btn"
-            data-read-id="6Ob1ANNVcXcC"
-          >
-            <img src="./img/openbook-icon.png" alt="book" />
-          </button>
-          <button
-            class="read__book-btn bookmark__btn"
-            data-read-id="6Ob1ANNVcXcC"
-          >
-            <img src="./img/deletebook-icon.png" alt="del" />
-          </button>
+          <button class="read__book-btn bookmark__btn"></button>
+          <button class="delete__book-btn bookmark__btn"></button>
         </div>
       </li>
     </template>

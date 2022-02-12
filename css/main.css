@@ -13,6 +13,18 @@ body {
   margin-right: 56px;
 }
 
+.search__input-box {
+  position: relative;
+}
+
+.search__icon {
+  position: absolute;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  top: 11px;
+  left: 17px;
+}
 .search__input {
   background: #f8fafd;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
@@ -102,6 +114,7 @@ body {
   background: #f8fafd;
   border-radius: 4px;
   margin-bottom: 15px;
+  align-items: center;
 }
 
 .bookmark__title {
@@ -119,6 +132,23 @@ body {
 .bookmark__btn {
   background: none;
   border: none;
+}
+.bookmark__btn::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.read__book-btn::before {
+  background-image: url("./../img/openbook-icon.png");
+}
+
+.delete__book-btn::before {
+  background-image: url("./../img/deletebook-icon.png");
 }
 
 /* RESULT */
@@ -160,12 +190,16 @@ body {
 
 .card__body {
   padding: 0 4px;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* flex-grow: 1; */
 }
 
 /* CARD-BUTTONS */
 .buttons {
   flex-direction: column;
   text-align: end;
+  flex-grow: 1;
 }
 .bookmark__add-btn {
   border: none;
@@ -200,6 +234,7 @@ body {
   background: #75828a;
   border-radius: 4px;
   color: #ffffff;
+  text-decoration: none;
 }
 
 /* CARD FONTS */
@@ -211,6 +246,7 @@ body {
   color: #000000;
   margin-bottom: 2px;
 }
+
 .book-author {
   font-weight: 500;
   font-size: 13px;
@@ -219,6 +255,7 @@ body {
   color: #757881;
   font-family: "Noto Sans", sans-serif;
 }
+
 .book-year {
   font-weight: 500;
   font-size: 13px;

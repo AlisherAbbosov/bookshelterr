@@ -12,7 +12,6 @@ const elResult = document.querySelector(".result");
 const elNewestBtn = document.querySelector(".newest__btn");
 const elBooksList = document.querySelector(".books__list");
 const elModal = document.querySelector(".info__modal");
-const elCloseModal = document.querySelector(".close__modal");
 const elOverlay = document.querySelector(".overlay");
 const elCardButtons = document.querySelector(".buttons");
 const elBookmarkList = document.querySelector(".bookmark__list");
@@ -62,14 +61,14 @@ const bookmarkedBooks = (arr, element) => {
     const clonedBookmarkTemplate = elBookmarkedTemplate.cloneNode(true);
 
     clonedBookmarkTemplate.querySelector(".bookmark__title").textContent =
-      bookmark.volumeInfo.title;
+      bookmark?.volumeInfo.title;
 
     clonedBookmarkTemplate.querySelector(".bookmark__authors").textContent =
-      bookmark.volumeInfo.authors?.join(", ") || "No info";
+      bookmark.volumeInfo?.authors.join(", ") || "No info";
 
     clonedBookmarkTemplate.querySelector(
       ".delete__book-btn"
-    ).dataset.bookmarkId = bookmark.id;
+    ).dataset.bookmarkId = bookmark?.id;
 
     clonedBookmarkTemplate.querySelector(".read__book-btn").href =
       bookmark?.volumeInfo.previewLink;
@@ -126,6 +125,7 @@ const paginate = (page) => {
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 
+// RENDER BOOKS:
 const renderBooks = (arr, element) => {
   pagesCount = arr.totalItems;
 
@@ -166,17 +166,17 @@ const renderBooks = (arr, element) => {
 
       if (!newbookmarkedBooks.includes(foundElement)) {
         newbookmarkedBooks.push(foundElement);
-
-        window.localStorage.setItem(
-          "bookmarkedBooks",
-          JSON.stringify(newbookmarkedBooks)
-        );
-
-        elBookmarkList.innerHTML = null;
-
-        bookmarkedBooks(newbookmarkedBooks, elBookmarkList);
       }
+      window.localStorage.setItem(
+        "bookmarkedBooks",
+        JSON.stringify(newbookmarkedBooks)
+      );
+
+      elBookmarkList.innerHTML = null;
+
+      bookmarkedBooks(newbookmarkedBooks, elBookmarkList);
     }
+
     if (evt.target.matches(".more__btn")) {
       elModal.innerHTML = null;
       let infoId = evt.target.dataset.bookId;
@@ -186,36 +186,44 @@ const renderBooks = (arr, element) => {
       const clonedBookTemplate = elModalTemplate.cloneNode(true);
 
       clonedBookTemplate.querySelector(".modal__title").textContent =
-        foundElement.volumeInfo.title;
+        foundElement?.volumeInfo.title;
       clonedBookTemplate.querySelector(".modal__img").src =
-        foundElement.volumeInfo?.imageLinks.smallThumbnail;
+        foundElement?.volumeInfo.imageLinks.smallThumbnail;
 
       clonedBookTemplate.querySelector(".modal__book-info").textContent =
-        foundElement.volumeInfo?.description;
+        foundElement?.volumeInfo.description;
 
       clonedBookTemplate.querySelector(".authors__values").textContent =
-        foundElement.volumeInfo?.authors[0];
+        foundElement?.volumeInfo.authors[0];
 
       clonedBookTemplate.querySelector(".published__values").textContent =
-        foundElement.volumeInfo?.publishedDate;
+        foundElement?.volumeInfo.publishedDate;
 
       clonedBookTemplate.querySelector(".publishers__values").textContent =
-        foundElement.volumeInfo?.publisher;
+        foundElement?.volumeInfo.publisher;
 
       clonedBookTemplate.querySelector(".count__values").textContent =
-        foundElement.volumeInfo?.pageCount;
+        foundElement?.volumeInfo.pageCount;
 
       clonedBookTemplate.querySelector(".modal__read-btn").href =
-        foundElement.volumeInfo?.previewLink;
+        foundElement?.volumeInfo.previewLink;
+      const elCloseModal = clonedBookTemplate.querySelector(".close__modal");
 
       modalFragment.appendChild(clonedBookTemplate);
       elModal.appendChild(modalFragment);
 
       elModal.classList.remove("hidden");
       elOverlay.classList.remove("hidden");
+
+      elCloseModal.addEventListener("click", () => closeModal());
+      elOverlay.addEventListener("click", () => closeModal());
     }
-    // elCloseModal.addEventListener("click", () => closeModal);
-    elOverlay.addEventListener("click", () => closeModal());
+
+    document.addEventListener("keydown", function (evt) {
+      if (evt.key == "Escape") {
+        closeModal();
+      }
+    });
   });
 
   element.appendChild(booksFragment);
@@ -239,18 +247,6 @@ elNewestBtn.addEventListener("click", () => {
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 
-// SEARCH BOOKS
-elSearchInput.addEventListener("change", (evt) => {
-  search = evt.target.value;
-
-  elBooksList.innerHTML = null;
-  page = 0;
-  getBooks();
-});
-
-///////////////////////////////////////////////
-//////////////////////////////////////////////
-
 // GET AIP
 
 const getBooks = async () => {
@@ -260,11 +256,19 @@ const getBooks = async () => {
     );
     const data = await response.json();
     renderBooks(data, elBooksList);
-    console.log(data);
   } catch (err) {
-    // console.log(err);
     pagesCount = 0;
     elResult.textContent = 0;
   }
 };
-getBooks();
+
+// SEARCH BOOKS
+elSearchInput.addEventListener("change", (evt) => {
+  search = evt.target.value;
+
+  elBooksList.innerHTML = null;
+  page = 0;
+  getBooks();
+});
+
+// getBooks();

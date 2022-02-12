@@ -10,6 +10,7 @@ body {
 
 .logo__light {
   margin-bottom: 50px;
+  display: block;
 }
 
 .login-container {
@@ -18,7 +19,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
-  text-align: center;
+  text-align: end;
 }
 
 .input {
@@ -71,16 +72,20 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  margin-bottom: 20px;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  display: block;
-  justify-content: end;
 }
+/* .wrong__user {
+  padding: 0;
+  color: #ed4956;
+} */
 
 .wrong__user {
   padding: 0;
-  margin-top: 20px;
   color: #ed4956;
+  /* display: block; */
+  text-align: start;
 }

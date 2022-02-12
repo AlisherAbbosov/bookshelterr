@@ -346,10 +346,9 @@ body {
 
 .info__modal {
   position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(-18%, -50%);
-  width: 40%;
+  top: 0;
+  right: 115px;
+  width: 552px;
   min-height: 100%;
   background: white;
   z-index: 10;

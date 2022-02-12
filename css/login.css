@@ -18,10 +18,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
+  text-align: center;
 }
 
 .input {
+  position: relative;
   margin-bottom: 20px;
+  display: flex;
 }
 
 .inputs {
@@ -39,12 +42,10 @@ body {
   text-transform: uppercase;
 }
 
-.input__username::before {
-  content: "";
-  background-image: url("../img/user.png");
+.login__labels {
   position: absolute;
-  top: 0;
-  left: 10px;
+  top: 13px;
+  left: 15px;
   height: 20px;
   width: 20px;
 }

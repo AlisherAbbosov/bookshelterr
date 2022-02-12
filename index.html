@@ -81,19 +81,20 @@
           </div>
           <div class="results__box">
             <ul class="books__list"></ul>
+
+            <div class="pagination mx-auto">
+              <button class="prev-btn pagination__buttons"></button>
+              <ul class="pagination__list"></ul>
+              <button class="next-btn pagination__buttons"></button>
+            </div>
           </div>
         </div>
       </section>
     </main>
-
     <!-- MODAL -->
 
-    <div class="info__modal hidden">
-      <div class="modal__top">
-        <button class="close__modal">×</button>
-      </div>
-      <div class="modal__body"></div>
-    </div>
+    <div class="info__modal hidden"></div>
+
     <div class="overlay hidden"></div>
 
     <!-- TEMPLATES -->
@@ -117,12 +118,13 @@
               <button class="bookmark__add-btn">Bookmark</button>
               <button class="more__btn">More info</button>
 
-              <button
+              <a
                 href="https://www.googleapis.com/books/v1/volumes/clTZCwAAQBAJs"
                 class="read__btn"
+                target="blank"
               >
                 Read
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -137,10 +139,97 @@
           <p class="bookmark__authors">David M. Beazley</p>
         </div>
         <div class="d-flex">
-          <button class="read__book-btn bookmark__btn"></button>
+          <a
+            href="https://www.googleapis.com/books/v1/volumes/clTZCwAAQBAJ"
+            class="read__book-btn bookmark__btn"
+            target="blank"
+          ></a>
           <button class="delete__book-btn bookmark__btn"></button>
         </div>
       </li>
+    </template>
+
+    <!-- Pagination -->
+    <template class="pagination__template">
+      <li class="pagination__page page-link">
+        <a class="pagination__page-num" href="#">1</a>
+      </li>
+    </template>
+
+    <!-- Modal -->
+    <template class="modal__template">
+      <div class="books__modal">
+        <div class="modal__top d-flex justify-content-between">
+          <h3 class="modal__title">Python</h3>
+          <button class="close__modal">×</button>
+        </div>
+        <div class="modal__body">
+          <div class="modal__image-box">
+            <img
+              src="http://books.google.com/books/content?id=fg4AAAAAMBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              alt=""
+              class="modal__img"
+              width="228"
+              height="300"
+            />
+          </div>
+          <p class="modal__book-info">
+            Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum.
+            Incididunt quis mollit elit commodo cillum eiusmod reprehenderit
+            labore irure. Cillum et incididunt et nostrud exercitation quis aute
+            laboris non ut adipisicing. Laboris ad minim aute nulla proident
+            deserunt velit anim sunt aliquip ut sit. Exercitation aliquip
+            ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod
+            sit consectetur mollit ea aliqua officia consequat. Magna non mollit
+            nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi
+            mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad
+            ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip
+            non consectetur esse proident duis Lorem.
+          </p>
+
+          <ul class="modal__list">
+            <li class="modal__item d-flex">
+              <p class="info__labels">Author :</p>
+              <p class="authors__value">
+                <span class="authors__values modal__values">
+                  The Definitive Guide</span
+                >
+              </p>
+            </li>
+
+            <li class="modal__item">
+              <p class="info__labels">Published :</p>
+              <p class="published__value">
+                <span class="published__values modal__values">2019</span>
+              </p>
+            </li>
+
+            <li class="modal__item">
+              <p class="info__labels">Publishers :</p>
+              <p class="publishers__value">
+                <span class="publishers__values modal__values">Hollman</span>
+              </p>
+            </li>
+
+            <li class="modal__item">
+              <p class="info__labels">Categories :</p>
+              <p class="categories__value">
+                <span class="categories__values modal__values">Computers</span>
+              </p>
+            </li>
+
+            <li class="modal__item">
+              <p class="info__labels">Pages Count :</p>
+              <p class="count__value">
+                <span class="count__values modal__values">364</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="modal__bottom">
+          <a href="#" class="modal__read-btn read__btn" target="blank">Read</a>
+        </div>
+      </div>
     </template>
 
     <script src="./js/script.js"></script>

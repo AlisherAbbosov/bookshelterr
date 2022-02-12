@@ -27,19 +27,27 @@
 
         <form class="login__form">
           <div class="input">
+            <label class="login__labels" for="user">
+              <img src=".//img/user.png" alt="">
+            </label>
             <input
               type="text"
               class="form-control inputs text-white input__username"
               placeholder="Username"
+              id="user"
               name="username"
               required
               autocomplete="off"
             />
           </div>
-          <div class="password__box">
+          <div class="password__box input">
+            <label class="login__labels" for="password">
+              <img src="./img/password-icon.png" alt="">
+            </label>
             <input
               class="form-control input__password inputs text-white"
               type="password"
+              id="password"
               placeholder="Password"
               name="password"
               required

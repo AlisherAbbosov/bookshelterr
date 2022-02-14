@@ -122,6 +122,19 @@ const paginate = (page) => {
   elPagination.appendChild(elPaginationItemsFragment);
 };
 
+elPagination.addEventListener("click", (evt) => {
+  if (evt.target.matches(".pagination__page-num")) {
+    let targetPage = evt.target.innerHTML;
+    console.log(evt.target.innerHTML);
+
+    page = targetPage;
+
+    elBooksList.innerHTML = "";
+
+    getBooks();
+  }
+});
+
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 
@@ -259,6 +272,7 @@ const getBooks = async () => {
   } catch (err) {
     pagesCount = 0;
     elResult.textContent = 0;
+    elBooksList.innerHTML = "No found";
   }
 };
 

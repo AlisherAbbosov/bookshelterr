@@ -335,11 +335,7 @@ body {
   box-sizing: border-box;
   border-radius: 4px;
   color: #0d75ff;
-}
-.pagination__page-num {
-  border: none;
-  text-decoration: none;
-  padding: 0;
+  cursor: pointer;
 }
 
 /* MODAL */

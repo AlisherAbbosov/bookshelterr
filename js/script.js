@@ -17,6 +17,8 @@ const elCardButtons = document.querySelector(".buttons");
 const elBookmarkList = document.querySelector(".bookmark__list");
 const elBookmarkItem = document.querySelector(".bookmark__item");
 const elPagination = document.querySelector(".pagination__list");
+const elPrevBtn = document.querySelector(".prev-btn");
+const elNextBtn = document.querySelector(".next-btn");
 const elResultTemplate = document.querySelector(
   ".search__books-template"
 ).content;
@@ -109,27 +111,38 @@ elBookmarkList.addEventListener("click", (evt) => {
 const paginate = (page) => {
   let pages = Math.ceil(page / maxResult);
 
-  // elPagination.innerHTML = null;
+  elPagination.innerHTML = null;
   var elPaginationItemsFragment = document.createDocumentFragment();
 
   for (let i = 1; i < pages; i++) {
     const elNewPaginationItem = elPaginationTemplate.cloneNode(true);
 
-    elNewPaginationItem.querySelector(".pagination__page-num").textContent = i;
+    elNewPaginationItem.querySelector(".pagination__page").textContent = i;
 
     elPaginationItemsFragment.appendChild(elNewPaginationItem);
   }
   elPagination.appendChild(elPaginationItemsFragment);
 };
+// elNextBtn.addEventListener("click", function () {
+//   if (page < pages) {
+//     page++;
+//     getBooks();
+//   }
+// });
+
+elPrevBtn.addEventListener("click", function () {
+  if (page > 1) {
+    page--;
+    getBooks();
+  }
+});
 
 elPagination.addEventListener("click", (evt) => {
-  if (evt.target.matches(".pagination__page-num")) {
+  if (evt.target.matches(".pagination__page")) {
     let targetPage = evt.target.innerHTML;
     console.log(evt.target.innerHTML);
 
     page = targetPage;
-
-    elBooksList.innerHTML = "";
 
     getBooks();
   }
@@ -140,6 +153,7 @@ elPagination.addEventListener("click", (evt) => {
 
 // RENDER BOOKS:
 const renderBooks = (arr, element) => {
+  elBooksList.innerHTML = null;
   pagesCount = arr.totalItems;
 
   paginate(pagesCount);
@@ -249,7 +263,6 @@ const renderBooks = (arr, element) => {
 
 elNewestBtn.addEventListener("click", () => {
   page = 0;
-  elBooksList.innerHTML = null;
   fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${search}&startIndex=${page}&maxResults=${maxResult}&orderBy=newest`
   )
@@ -280,7 +293,6 @@ const getBooks = async () => {
 elSearchInput.addEventListener("change", (evt) => {
   search = evt.target.value;
 
-  elBooksList.innerHTML = null;
   page = 0;
   getBooks();
 });

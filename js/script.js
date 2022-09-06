@@ -123,12 +123,6 @@ const paginate = (page) => {
   }
   elPagination.appendChild(elPaginationItemsFragment);
 };
-// elNextBtn.addEventListener("click", function () {
-//   if (page < pages) {
-//     page++;
-//     getBooks();
-//   }
-// });
 
 elPrevBtn.addEventListener("click", function () {
   if (page > 1) {

@@ -39,4 +39,3 @@ elForm.addEventListener("submit", (evt) => {
       }
     });
 });
-elUserInput.value = null;

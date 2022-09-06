@@ -5,7 +5,6 @@ body {
 .login__section {
   background-image: url("../img/login-bg.jpg");
   height: 100vh;
-  /* position: relative; */
 }
 
 .logo__light {
@@ -78,14 +77,10 @@ body {
   border: none;
   cursor: pointer;
 }
-/* .wrong__user {
-  padding: 0;
-  color: #ed4956;
-} */
 
 .wrong__user {
   padding: 0;
   color: #ed4956;
-  /* display: block; */
+
   text-align: start;
 }
